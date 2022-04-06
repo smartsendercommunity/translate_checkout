@@ -100,7 +100,7 @@ for ($i = 1; $i <= $pages; $i++) {
 	$essences = $checkout["collection"];
 	$currency = $essences[0]["cash"]["currency"];
 	foreach ($essences as $product) {
-		$message = $message.$count." 🔸 ".$product["pivot"]["quantity"]." x ".$product["product"]["name"]." ".$product["name"]." — ".$product["pivot"]["quantity"] * $product["cash"]["amount"]."  ".$product["cash"]["currency"]."\n";
+		$message = $message.$count." 🔸 ".$product["pivot"]["quantity"]." x ".$product["product"]["name"]." ".$product["name"]." — ".($product["pivot"]["quantity"] * $product["cash"]["amount"])."  ".$product["cash"]["currency"]."\n";
     	$summ[] = $product["pivot"]["quantity"]*$product["cash"]["amount"];
     	$count ++;
     }
